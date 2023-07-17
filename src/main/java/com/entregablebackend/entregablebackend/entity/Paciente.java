@@ -1,15 +1,14 @@
 package com.entregablebackend.entregablebackend.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
-public class Paciente { 
+public class Paciente {
 
 
     @Id
@@ -17,21 +16,16 @@ public class Paciente {
 
     private String nombre;
 
-    private String apellido; 
+    private String apellido;
 
+    private LocalDate fechaNacimiento;
     private String celular;
+    @OneToMany(mappedBy = "paciente")
+    private List<Cita> citas;
 
-    public Paciente(Long cedula, String nombre, String apellido, String celular) {
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.celular = celular;
-    }
-    
 
     public Paciente() {
     }
-
 
     public Long getCedula() {
         return cedula;
@@ -64,7 +58,12 @@ public class Paciente {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-    
-    
-    
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
 }

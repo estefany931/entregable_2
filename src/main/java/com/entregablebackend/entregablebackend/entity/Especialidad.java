@@ -16,10 +16,9 @@ public class Especialidad {
     @OneToMany(mappedBy = "especialidad")
     private List<Medico> medicos;
 
-    public Especialidad(Long idEspecialidad, String nombre, List<Medico> medicos) {
+    public Especialidad(Long idEspecialidad, String nombre) {
         this.idEspecialidad = idEspecialidad;
         this.nombre = nombre;
-        this.medicos = medicos;
     }
 
     public Especialidad() {
@@ -41,13 +40,6 @@ public class Especialidad {
         this.nombre = nombre;
     }
 
-    public List<Medico> getMedicos() {
-        return medicos;
-    }
-
-    public void setMedicos(List<Medico> medicos) {
-        this.medicos = medicos;
-    }
 
     
 

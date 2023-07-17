@@ -21,17 +21,9 @@ public class Cita {
     @JoinColumn(name="cedula")
     private Paciente paciente;
     @ManyToOne
-    @JoinColumn(name="tarjetaProfesional")
+    @JoinColumn(name="tarjeta_profesional")
     private Medico medico;
 
-    public Cita(Long id_cita, LocalDate fecha_cita, Paciente paciente, Medico medico) {
-        this.id_cita = id_cita;
-        this.fecha_cita = fecha_cita;
-        this.paciente = paciente;
-        this.medico = medico;
-    }
-
-    
     public Cita() {
     }
 
