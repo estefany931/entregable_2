@@ -12,15 +12,10 @@ public class Especialidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEspecialidad;
+    private long code;
     private String nombre;
     @OneToMany(mappedBy = "especialidad")
     private List<Medico> medicos;
-
-    public Especialidad(Long idEspecialidad, String nombre) {
-        this.idEspecialidad = idEspecialidad;
-        this.nombre = nombre;
-    }
-
     public Especialidad() {
     }
 
@@ -39,6 +34,24 @@ public class Especialidad {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public long getCode() {
+        return code;
+    }
+
+    public void setCode(long code) {
+        this.code = code;
+    }
+
+    public List<Medico> getMedicos() {
+        return medicos;
+    }
+
+    public void setMedicos(List<Medico> medicos) {
+        this.medicos = medicos;
+    }
+
+    
 
 
     
